@@ -61,8 +61,8 @@ def gen_position(df: pd.DataFrame) -> pd.DataFrame:
     df.loc[df["decayed"] > 0, "signal"] = 1
     df.loc[df["decayed"] < 0, "signal"] = -1
 
-# flip signal
-    df["signal"] = -df["signal"]
+#  signal
+    df["signal"] = df["signal"]
 
     df["position"] = df["signal"].astype(int)
     signal_counts = df["signal"].value_counts().to_dict()
